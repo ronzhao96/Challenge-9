@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
-//const generateMarkdown = require('generateMarkdown');
+const generateMarkdown = require('generateMarkdown');
 const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
@@ -62,15 +62,8 @@ function writeToFile(fileName, data) {
         console.log(JSON.stringify(data[key]).replace(/\"/g, "")); 
         dataArr.push(data[key]);
     }
-    
-    const title = JSON.stringify(dataArr[0]);
-    const description = JSON.stringify(dataArr[1]);
-    const installation = JSON.stringify(dataArr[2]);
-    const usage = JSON.stringify(dataArr[3]);
-    const guidelines = JSON.stringify(dataArr[4]);
-    const test = JSON.stringify(dataArr[5]);
-    const username = JSON.stringify(dataArr[7]);
-    const email = JSON.stringify(dataArr[8]);
+
+
 
     fs.writeFile(fileName, `# ${dataArr[0]}\n## Table of Contents\n* [Description](#description)\n* [Installation Instructions](#installation-instructions)\n* [Usage Information](#usage-information)\n* [Contribution Guidelines](#contribution-guidelines)\n* [Test Instructions](#test-instructions)\n* [License](#license)\n* [Contact](#contact)\n## Description\n${dataArr[1]}\n## Installation Instructions\n${dataArr[2]}\n## Usage Information\n${dataArr[3]}\n## Contribution Guidelines\n${dataArr[4]}\n## Test Instructions\n${dataArr[5]}\n## License\n## Contact\n* GitHub Link: https://github.com/${dataArr[7]}\n* Email: ${dataArr[8]}`,(err) => err ? console.log(err) : console.log('Success!'));
 }
