@@ -1,26 +1,3 @@
-# challenge-9
-## Table of Contents
-* [Description](#description)
-* [Installation Instructions](#installation-instructions)
-* [Usage Information](#usage-information)
-* [Contribution Guidelines](#contribution-guidelines)
-* [Test Instructions](#test-instructions)
-* [License](#license)
-* [Contact](#contact)
-## Description
-description
-## Installation Instructions
-instructions
-## Usage Information
-information
-## Contribution Guidelines
-guidelines
-## Test Instructions
-instructions
-## License
-* [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-* https://opensource.org/licenses/MIT
-
 MIT License
 
 Copyright (c) [year] [fullname]
@@ -42,6 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-## Contact
-* GitHub Link: https://github.com/ronzhao96
-* Email: ronald96919@yahoo.com

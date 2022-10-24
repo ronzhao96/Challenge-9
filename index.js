@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
-const generateMarkdown = require('generateMarkdown');
 const inquirer = require('inquirer');
+const generateMarkdown = require('./generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -39,7 +39,7 @@ const questions = [
         type: 'list',
         message: 'What license do you want to use?',
         name: 'license',
-        choices: ['GNU', 'MIT', 'Apache 2.0', 'ISC'],
+        choices: ['GNU', 'MIT', 'Apache 2.0', 'ISC','None'],
     },
     {
         type: 'input',
@@ -62,10 +62,11 @@ function writeToFile(fileName, data) {
         console.log(JSON.stringify(data[key]).replace(/\"/g, "")); 
         dataArr.push(data[key]);
     }
+    
+    const fileText = generateMarkdown(dataArr);
+    console.log(fileText);
 
-
-
-    fs.writeFile(fileName, `# ${dataArr[0]}\n## Table of Contents\n* [Description](#description)\n* [Installation Instructions](#installation-instructions)\n* [Usage Information](#usage-information)\n* [Contribution Guidelines](#contribution-guidelines)\n* [Test Instructions](#test-instructions)\n* [License](#license)\n* [Contact](#contact)\n## Description\n${dataArr[1]}\n## Installation Instructions\n${dataArr[2]}\n## Usage Information\n${dataArr[3]}\n## Contribution Guidelines\n${dataArr[4]}\n## Test Instructions\n${dataArr[5]}\n## License\n## Contact\n* GitHub Link: https://github.com/${dataArr[7]}\n* Email: ${dataArr[8]}`,(err) => err ? console.log(err) : console.log('Success!'));
+    fs.writeFile(fileName, fileText, (err) => err ? console.log(err) : console.log('Success!'));
 }
 
 // TODO: Create a function to initialize app
